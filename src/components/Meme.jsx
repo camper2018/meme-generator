@@ -16,6 +16,9 @@ export default function Meme() {
     // } catch (error){
     //   console.error(error);
     // }
+    // we can't use async function as a parameter to useEffect
+    // because async function returns a promise whereas react expects useEffect function 
+    // to return a cleanup function which if provided, runs after the component unmounts.
     async function getMemes() {
       try {
         const res = await fetch("https://api.imgflip.com/get_memes")
